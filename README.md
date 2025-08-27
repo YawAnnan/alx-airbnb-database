@@ -1,15 +1,6 @@
 # alx-airbnb-database
-
-erDiagram
-    User ||--o{ Property : "is a host of"
-    User ||--o{ Booking : "makes a"
-    User ||--o{ Review : "writes a"
-    User ||--o| Message : "is a sender of"
-    User ||--o{ Message : "is a recipient of"
-    Property ||--o{ Booking : "is booked"
-    Property ||--o{ Review : "receives a"
-    Booking ||--|{ Payment : "is paid for by"
-    
+   
+    ---
     User {
         UUID user_id PK "Primary Key"
         VARCHAR first_name
