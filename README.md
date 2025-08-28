@@ -1,7 +1,10 @@
 # alx-airbnb-database
    
-    ---
-    User {
+    <br>
+<br>
+```mermaid
+erDiagram
+User {
         UUID user_id PK "Primary Key"
         VARCHAR first_name
         VARCHAR last_name
@@ -58,3 +61,8 @@
         TEXT message_body
         TIMESTAMP sent_at
     }
+}
+```
+<br>
+<br>
+    
