@@ -1,10 +1,5 @@
-# alx-airbnb-database
-   
-    <br>
-<br>
-```mermaid
 erDiagram
-User {
+    User {
         UUID user_id PK "Primary Key"
         VARCHAR first_name
         VARCHAR last_name
@@ -61,8 +56,12 @@ User {
         TEXT message_body
         TIMESTAMP sent_at
     }
-}
-```
-<br>
-<br>
-    
+
+    User ||--o{ Property : "hosts"
+    User ||--o{ Booking : "books"
+    User ||--o{ Review : "writes"
+    User ||--o{ Message : "sends"
+    User ||--o{ Message : "receives"
+    Property ||--o{ Booking : "is booked for"
+    Property ||--o{ Review : "is reviewed for"
+    Booking ||--|| Payment : "has a"
