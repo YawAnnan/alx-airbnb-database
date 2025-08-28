@@ -1,3 +1,4 @@
+
 erDiagram
     User {
         UUID user_id PK "Primary Key"
@@ -56,12 +57,3 @@ erDiagram
         TEXT message_body
         TIMESTAMP sent_at
     }
-
-    User ||--o{ Property : "hosts"
-    User ||--o{ Booking : "books"
-    User ||--o{ Review : "writes"
-    User ||--o{ Message : "sends"
-    User ||--o{ Message : "receives"
-    Property ||--o{ Booking : "is booked for"
-    Property ||--o{ Review : "is reviewed for"
-    Booking ||--|| Payment : "has a"
