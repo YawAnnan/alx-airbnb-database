@@ -1,12 +1,4 @@
-erDiagram
-    User ||--o{ Property : "is a host of"
-    User ||--o{ Booking : "makes a"
-    User ||--o{ Review : "writes a"
-    User ||--o| Message : "is a sender of"
-    User ||--o{ Message : "is a recipient of"
-    Property ||--o{ Booking : "is booked"
-    Property ||--o{ Review : "receives a"
-    Booking ||--|{ Payment : "is paid for by"
+<img width="3176" height="2119" alt="Image" src="https://github.com/user-attachments/assets/e0526faa-1c2b-4373-87a2-ef0ef20051ec" />
     
     User {
         UUID user_id PK "Primary Key"
