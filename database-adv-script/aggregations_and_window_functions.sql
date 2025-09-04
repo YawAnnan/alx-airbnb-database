@@ -10,9 +10,6 @@ GROUP BY
 
 ---
 
-### Rank Properties by Bookings
-
-```sql
 :Rank Properties by Bookings:rank_properties_by_bookings.sql
 WITH PropertyBookings AS (
   SELECT
@@ -26,6 +23,7 @@ WITH PropertyBookings AS (
 SELECT
   property_id,
   total_bookings,
+  ROW_NUMBER() OVER (ORDER BY total_bookings DESC) AS row_num,
   RANK() OVER (ORDER BY total_bookings DESC) AS booking_rank,
   DENSE_RANK() OVER (ORDER BY total_bookings DESC) AS dense_booking_rank
 FROM
