@@ -17,25 +17,24 @@ ON
 /*
   This query uses a LEFT JOIN to retrieve all properties and their reviews.
   It includes properties that do not have any reviews.
-  The LEFT JOIN ensures that every row from the 'left' table (Properties) is returned,
-  and any matching rows from the 'right' table (Reviews) are included.
-  If a property has no matching review, the review-related columns (rating, comment)
-  will show as NULL.
+  The results are sorted by the property's name to make the list easy to read.
 */
 SELECT
-  p.property_name,    -- Selects the name of the property from the Properties table.
-  r.rating,           -- Selects the rating of the review from the Reviews table.
-  r.comment           -- Selects the comment text from the Reviews table.
+  p.property_name,    -- Selects the name of the property.
+  r.rating,           -- Selects the rating of the review.
+  r.comment           -- Selects the comment text from the review.
 FROM
-  Properties AS p     -- Specifies the Properties table as the 'left' table, aliased as 'p'.
+  Properties AS p
 LEFT JOIN
-  Reviews AS r ON p.property_id = r.property_id;  -- Joins with the Reviews table on the common property_id.
+  Reviews AS r ON p.property_id = r.property_id
+ORDER BY
+  p.property_name;    -- Sorts the result set alphabetically by property name.
+
 /*
   This query uses a FULL OUTER JOIN to retrieve all users and all bookings.
   It's useful for finding unmatched records in both tables.
   For example, it will show users who haven't made a booking (booking columns will be NULL)
   and bookings that aren't linked to a user (user columns will be NULL).
-
 */
 SELECT
   u.user_id,        -- Selects the user ID from the Users table
